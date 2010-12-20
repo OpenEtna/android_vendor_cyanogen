@@ -23,7 +23,9 @@ PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=htc_vision BUILD_ID=FRF91 BUILD_DIS
 #PRODUCT_SPECIFIC_DEFINES += TARGET_KERNEL_CONFIG=cyanogen_vision_defconfig
 
 # Include the Torch app
-PRODUCT_PACKAGES += Torch
+PRODUCT_PACKAGES += \
+    Torch \
+    FM
 
 # Extra Vision overlay
 PRODUCT_PACKAGE_OVERLAYS += vendor/cyanogen/overlay/vision
@@ -36,7 +38,7 @@ ifdef CYANOGEN_NIGHTLY
         ro.modversion=CyanogenMod-6-$(shell date +%m%d%Y)-NIGHTLY-vision
 else
     PRODUCT_PROPERTY_OVERRIDES += \
-        ro.modversion=CyanogenMod-6.1.0-RC3-vision
+        ro.modversion=CyanogenMod-6.2.0-RC0-vision
 endif
 
 #
