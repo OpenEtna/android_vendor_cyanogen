@@ -41,7 +41,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     CMParts \
     CMPartsHelper \
-    CMStats \
     CMWallpapers \
     DSPManager \
     FileManager \
