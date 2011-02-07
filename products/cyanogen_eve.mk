@@ -2,9 +2,9 @@
 $(call inherit-product, device/lg/eve/full_eve.mk)
 
 # Inherit some common cyanogenmod stuff.
-$(call inherit-product, vendor/cyanogen/products/common.mk)
+$(call inherit-product, vendor/cyanogen/products/common_full.mk)
 
-# Include GSM-only stuff
+# Include GSM stuff
 $(call inherit-product, vendor/cyanogen/products/gsm.mk)
 
 #
@@ -15,33 +15,23 @@ PRODUCT_BRAND := google
 PRODUCT_DEVICE := eve
 PRODUCT_MODEL := GW620
 PRODUCT_MANUFACTURER := LG
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_ID=FRG83 BUILD_DISPLAY_ID=FRG83 BUILD_FINGERPRINT=google/passion/passion/mahimahi:2.2.1/FRG83/60505:user/release-keys PRIVATE_BUILD_DESC="passion-user 2.2.1 FRG83 60505 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=passion BUILD_ID=FRG83D BUILD_DISPLAY_ID=GRH78C BUILD_FINGERPRINT=google/passion/passion/mahimahi:2.2.1/FRG83D/75603:user/release-keys PRIVATE_BUILD_DESC="passion-user 2.2.1 FRG83D 75603 release-keys"
 
 # Build kernel
 PRODUCT_SPECIFIC_DEFINES += TARGET_PREBUILT_KERNEL=
 PRODUCT_SPECIFIC_DEFINES += TARGET_KERNEL_DIR=kernel
 PRODUCT_SPECIFIC_DEFINES += TARGET_KERNEL_CONFIG=openetna
 
-# Extra DS overlay
-PRODUCT_PACKAGE_OVERLAYS += device/lg/eve/overlay
-
-# Enable Compcache by default on D/S
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.compcache.default=1
-
 #
 # Set ro.modversion
 #
 ifdef CYANOGEN_NIGHTLY
     PRODUCT_PROPERTY_OVERRIDES += \
-        ro.modversion=OpenEtna/CyanogenMod-6.1-$(shell date +%m%d%Y)-NIGHTLY
+        ro.modversion=OpenEtna/CyanogenMod-7.0-$(shell date +%m%d%Y)-NIGHTLY
 else
     PRODUCT_PROPERTY_OVERRIDES += \
-        ro.modversion=OpenEtna/CyanogenMod-6.1
+        ro.modversion=OpenEtna/CyanogenMod-7.0
 endif
-
-# Use the audio profile hack
-WITH_DS_HTCACOUSTIC_HACK := true
 
 # Add the Torch app
 PRODUCT_PACKAGES += Torch
