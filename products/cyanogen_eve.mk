@@ -25,10 +25,6 @@ PRODUCT_SPECIFIC_DEFINES += TARGET_KERNEL_CONFIG=openetna
 # Extra DS overlay
 PRODUCT_PACKAGE_OVERLAYS += device/lg/eve/overlay
 
-# Enable Compcache by default on D/S
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.compcache.default=1
-
 #
 # Set ro.modversion
 #
